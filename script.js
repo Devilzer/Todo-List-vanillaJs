@@ -3,7 +3,7 @@ const inputForm = document.querySelector(".input-form");
 const todoList = document.querySelector(".todos");
 const remainingTask = document.querySelector(".remaining-task span");
 const completeTask = document.querySelector(".completed-task span");
-
+const clearComplete = document.querySelector(".clear-complete");
 //check for local storage or create a empty todo array
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 if (localStorage.getItem("todos")) {
@@ -99,3 +99,11 @@ const completedTodo = todos.filter((todo)=>todo.isCompleted===true);
 remainingTask.textContent = totalTodo - completedTodo.length;
 completeTask.textContent = completedTodo.length;
 }
+
+// clear completed todo function
+clearComplete.addEventListener("click",()=>{
+    const completedTodo = todos.filter((todo)=>todo.isCompleted===true);
+    completedTodo.map((todo) => {
+        deleteTodo(todo.id);
+      });
+});
