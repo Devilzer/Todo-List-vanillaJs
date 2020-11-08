@@ -45,6 +45,7 @@ h1 {
   height: 50px;
   width: 250px;
   margin: 5px;
+  padding: 0px 10px;
   border-radius: 25px;
   font-size: 20px;
 }
@@ -73,13 +74,24 @@ h1 {
 .tasks-counter {
   line-height: 21px;
   margin-left: 5px;
+  display: flex;
+  flex-direction: row;
 }
 .clear-complete {
   line-height: 21px;
   margin-right: 5px;
 }
+.remaining-task span {
+  color: rgba(255, 0, 0, 0.603);
+}
+.completed-task {
+  margin-left: 10px;
+}
+.completed-task span {
+  color: #79d70f;
+}
 .clear-complete:hover {
-  color: #3e5551;
+  color: #625261;
   cursor: pointer;
 }
 .tasks {
@@ -89,7 +101,6 @@ h1 {
   flex-direction: row;
   border-bottom: 2.5px solid #89beb3;
 }
-
 input:checked + .task-text {
   text-decoration: line-through;
 }
@@ -113,4 +124,11 @@ input.checkbox {
   font-size: 27.5px;
   color: rgba(255, 0, 0, 0.603);
   cursor: pointer;
+}
+
+#todo-header {
+  font-size: 20px;
+  color: #6f9991;
+  margin-left: 5px;
+  border-bottom: 2.5px solid #89beb3;
 }
